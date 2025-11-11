@@ -1,0 +1,52 @@
+[
+    {
+        "Name": "Ivan",
+        "Gender": "m",
+        "Height": 180
+    },
+    {
+        "Name": "Oleh",
+        "Gender": "m",
+        "Height": 172
+    },
+    {
+        "Name": "Maksym",
+        "Gender": "m",
+        "Height": 190
+    },
+    {
+        "Name": "Serhii",
+        "Gender": "m",
+        "Height": 175
+    },
+    {
+        "Name": "Yurii",
+        "Gender": "m",
+        "Height": 185
+    },
+    {
+        "Name": "Olha",
+        "Gender": "f",
+        "Height": 160
+    },
+    {
+        "Name": "Iryna",
+        "Gender": "f",
+        "Height": 170
+    },
+    {
+        "Name": "Kateryna",
+        "Gender": "f",
+        "Height": 167
+    },
+    {
+        "Name": "Tetiana",
+        "Gender": "f",
+        "Height": 162
+    },
+    {
+        "Name": "Egor",
+        "Gender": "m",
+        "Height": 198.0
+    }
+]

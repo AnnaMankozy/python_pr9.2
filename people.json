@@ -1,52 +1,52 @@
 [
     {
-        "Name": "Ivan",
+        "Name": "Ivan Petrenko",
         "Gender": "m",
         "Height": 180
     },
     {
-        "Name": "Oleh",
+        "Name": "Oleh Shevchenko",
         "Gender": "m",
         "Height": 172
     },
     {
-        "Name": "Maksym",
+        "Name": "Maksym Bondar",
         "Gender": "m",
         "Height": 190
     },
     {
-        "Name": "Serhii",
+        "Name": "Serhii Kovalenko",
         "Gender": "m",
         "Height": 175
     },
     {
-        "Name": "Yurii",
+        "Name": "Yurii Melnyk",
         "Gender": "m",
         "Height": 185
     },
     {
-        "Name": "Olha",
+        "Name": "Anna Ivanova",
+        "Gender": "f",
+        "Height": 165
+    },
+    {
+        "Name": "Olha Sydorenko",
         "Gender": "f",
         "Height": 160
     },
     {
-        "Name": "Iryna",
+        "Name": "Iryna Tkachenko",
         "Gender": "f",
         "Height": 170
     },
     {
-        "Name": "Kateryna",
+        "Name": "Kateryna Hrytsenko",
         "Gender": "f",
         "Height": 167
     },
     {
-        "Name": "Tetiana",
+        "Name": "Tetiana Marchenko",
         "Gender": "f",
         "Height": 162
-    },
-    {
-        "Name": "Egor",
-        "Gender": "m",
-        "Height": 198.0
     }
 ]

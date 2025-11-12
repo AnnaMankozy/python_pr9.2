@@ -5,16 +5,16 @@ RESULT_FILENAME = "result.json"
 
 def create_initial_data():
     people = [
-        {"Name": "Ivan", "Gender": "m", "Height": 180},
-        {"Name": "Oleh", "Gender": "m", "Height": 172},
-        {"Name": "Maksym", "Gender": "m", "Height": 190},
-        {"Name": "Serhii", "Gender": "m", "Height": 175},
-        {"Name": "Yurii", "Gender": "m", "Height": 185},
-        {"Name": "Anna", "Gender": "f", "Height": 165},
-        {"Name": "Olha", "Gender": "f", "Height": 160},
-        {"Name": "Iryna", "Gender": "f", "Height": 170},
-        {"Name": "Kateryna", "Gender": "f", "Height": 167},
-        {"Name": "Tetiana", "Gender": "f", "Height": 162}
+        {"Name": "Ivan Petrenko", "Gender": "m", "Height": 180},
+        {"Name": "Oleh Shevchenko", "Gender": "m", "Height": 172},
+        {"Name": "Maksym Bondar", "Gender": "m", "Height": 190},
+        {"Name": "Serhii Kovalenko", "Gender": "m", "Height": 175},
+        {"Name": "Yurii Melnyk", "Gender": "m", "Height": 185},
+        {"Name": "Anna Ivanova", "Gender": "f", "Height": 165},
+        {"Name": "Olha Sydorenko", "Gender": "f", "Height": 160},
+        {"Name": "Iryna Tkachenko", "Gender": "f", "Height": 170},
+        {"Name": "Kateryna Hrytsenko", "Gender": "f", "Height": 167},
+        {"Name": "Tetiana Marchenko", "Gender": "f", "Height": 162}
     ]
     with open(FILENAME, "w") as f:
         json.dump(people, f, ensure_ascii=False, indent=4)
@@ -42,7 +42,6 @@ def write_json(data):
     with open(FILENAME, "w") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
-
 def show_data():
     data = read_json()
     print("\nCurrent data:")
@@ -53,11 +52,11 @@ def add_person():
     data = read_json()
 
     while True:
-        name = input("Enter Name: ").strip()
-        if name.replace("'", "").isalpha():
+        full_name = input("Enter Name and Surname (e.g., Ivan Petrenko): ").strip()
+        if len(full_name.split()) == 2 and all(part.isalpha() for part in full_name.split()):
             break
         else:
-            print("Name should contain only letters!")
+            print("Enter valid Name and Surname (letters only, separated by a space).")
 
     while True:
         gender = input("Gender (m - male / f - female): ").lower().strip()
@@ -76,28 +75,28 @@ def add_person():
         except ValueError:
             print("Error: enter a number!")
 
-    if any(p["Name"].lower() == name.lower() for p in data):
-        print("Error: person with this name already exists.")
+    if any(p["Name"].lower() == full_name.lower() for p in data):
+        print("Error: person with this Name and Surname already exists.")
         return
 
-    data.append({"Name": name, "Gender": gender, "Height": height})
+    data.append({"Name": full_name, "Gender": gender, "Height": height})
     write_json(data)
-    print(f"Record for {name} added!")
+    print(f"Record for {full_name} added!")
 
 def delete_person():
     data = read_json()
-    name = input("Enter Name to delete: ").strip()
-    new_data = [p for p in data if p["Name"].lower() != name.lower()]
+    full_name = input("Enter Name and Surname to delete: ").strip()
+    new_data = [p for p in data if p["Name"].lower() != full_name.lower()]
     if len(new_data) == len(data):
         print("Person not found.")
     else:
         write_json(new_data)
-        print(f"Record for {name} deleted.")
+        print(f"Record for {full_name} deleted.")
 
 def search_person():
     data = read_json()
-    name = input("Enter Name or part of Name to search: ").strip()
-    results = [p for p in data if name.lower() in p["Name"].lower()]
+    name_part = input("Enter Name or Surname to search: ").strip()
+    results = [p for p in data if name_part.lower() in p["Name"].lower()]
     if results:
         print("\nSearch results:")
         for p in results:
@@ -123,7 +122,7 @@ def main():
         print("1) Show data")
         print("2) Add record")
         print("3) Delete record")
-        print("4) Search by Name")
+        print("4) Search by Name or Surname")
         print("5) Calculate average male height")
         print("6) Exit")
 
@@ -147,3 +146,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
